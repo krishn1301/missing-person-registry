@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen relative overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-black/70 z-10"></div>
+        <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+            {% for case in scrolling_cases %}
+            <div class="absolute w-full h-full transition-opacity duration-1000">
+                <img src="{{ case.image }}" alt="{{ case.name }}" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                    <p class="text-white text-xl">{{ case.name }}</p>
+                    <p class="text-gray-300">Age: {{ case.age }} | Last seen in {{ case.location }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="relative z-10 min-h-screen flex items-center justify-center p-4">
+        <div class="bg-gray-900/90 backdrop-blur-sm rounded-xl shadow-lg p-8 w-full max-w-md border border-gray-800">
+            <div class="flex items-center justify-center mb-8">
+                <div class="bg-indigo-900/80 p-3 rounded-full">
+                    <i data-lucide="log-in" class="w-8 h-8 text-indigo-400"></i>
+                </div>
+            </div>
+            
+            <h1 class="text-2xl font-bold text-center text-gray-100 mb-8">
+                Log In
+            </h1>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="mb-6 p-4 bg-red-900/80 text-red-200 rounded-lg">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form action="{{ url_for('auth_login') }}" method="POST" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="user" class="w-4 h-4"></i>
+                            User ID
+                        </div>
+                    </label>
+                    <input
+                        type="text"
+                        name="userId"
+                        class="w-full px-4 py-2 bg-gray-800/90 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-gray-100"
+                        placeholder="Enter your user ID"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="lock" class="w-4 h-4"></i>
+                            Password
+                        </div>
+                    </label>
+                    <input
+                        type="password"
+                        name="password"
+                        class="w-full px-4 py-2 bg-gray-800/90 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-gray-100"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full bg-indigo-600/90 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition duration-200 flex items-center justify-center gap-2"
+                >
+                    <i data-lucide="log-in" class="w-5 h-5"></i>
+                    Log In
+                </button>
+            </form>
+
+            <a
+                href="{{ url_for('signup') }}"
+                class="mt-4 w-full text-indigo-400 hover:text-indigo-300 transition duration-200 flex items-center justify-center gap-2 text-sm"
+            >
+                <i data-lucide="user-plus" class="w-4 h-4"></i>
+                Create an Account
+            </a>
+
+            <div class="mt-6 relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-700"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-gray-900 text-gray-500">or</span>
+                </div>
+            </div>
+
+            <a
+                href="{{ url_for('home') }}"
+                class="mt-6 w-full bg-gray-800/90 text-gray-300 py-2 px-4 rounded-lg border border-gray-700 hover:bg-gray-700 transition duration-200 flex items-center justify-center gap-2"
+            >
+                <i data-lucide="user-circle-2" class="w-5 h-5"></i>
+                Continue as Guest
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
