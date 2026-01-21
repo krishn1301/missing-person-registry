@@ -214,11 +214,15 @@ project/
 
 This project is open source and available under the MIT License.
 
-## 👤 Author
+## � Authors
 
 **Krishn Khandelwal**
 - GitHub: [@krishn1301](https://github.com/krishn1301)
 - Email: 1khandelwalnhk@gmail.com
+
+**[Your Project Mate's Name]**
+- GitHub: [@their-username](https://github.com/their-username)
+- Email: their-email@example.com
 
 ## 🤝 Contributing
 
