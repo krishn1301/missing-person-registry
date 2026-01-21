@@ -220,9 +220,9 @@ This project is open source and available under the MIT License.
 - GitHub: [@krishn1301](https://github.com/krishn1301)
 - Email: 1khandelwalnhk@gmail.com
 
-**[Your Project Mate's Name]**
-- GitHub: [@their-username](https://github.com/their-username)
-- Email: their-email@example.com
+**Hamza Khan**
+- GitHub: [@Hmkz0x00](https://github.com/Hmkz0x00)
+- Email: hamzamkit123@gst.sies.edu.in
 
 ## 🤝 Contributing
 

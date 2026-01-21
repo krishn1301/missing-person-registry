@@ -4,7 +4,7 @@ This project was built collaboratively by:
 
 ## Primary Developers
 - **Krishn Khandelwal** - Full-stack development, backend API, database design
-- **[Your Project Mate's Name]** - [Their contributions]
+- **Hamza Khan** - Testing, User authentication system, Database schema and JSON storage
 
 ## Contributions
 
@@ -16,9 +16,10 @@ This project was built collaboratively by:
 - User authentication system
 - Database schema and JSON storage
 
-### [Your Project Mate's Name]
-- [List their specific contributions]
-- [e.g., UI/UX design, testing, documentation, etc.]
+### Hamza Khan
+- Comprehensive testing and quality assurance
+- User authentication system implementation and validation
+- Database schema design and JSON storage optimization
 
 ## Special Thanks
 
